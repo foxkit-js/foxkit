@@ -15,7 +15,8 @@
     "./clamp": {
       "import": "./dist/clamp/index.js",
       "require": "./dist/clamp/index.cjs"
-    }
+    },
+    "./package.json": "./package.json"
   },
   "scripts": {
     "lint": "eslint .",

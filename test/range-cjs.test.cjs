@@ -2,7 +2,7 @@
 const { range } = require("../dist/range/index.cjs");
 const { deepEqual, strictEqual } = require("assert");
 
-describe("range (esm)", () => {
+describe("range (cjs)", () => {
   it("returns 0 to 5 given only end of 5", () => {
     deepEqual(range({ end: 5 }), [0, 1, 2, 3, 4, 5]);
   });

@@ -2,7 +2,7 @@
 const { sleep } = require("../dist/sleep/index.cjs");
 const { strictEqual } = require("assert");
 
-describe("sleep (esm)", () => {
+describe("sleep (cjs)", () => {
   it("approx. waits for set amount of time", done => {
     let hasFinished = false;
     sleep(200).then(() => {
@@ -13,13 +13,13 @@ describe("sleep (esm)", () => {
     }, 150);
     setTimeout(() => {
       strictEqual(hasFinished, true);
-      done()
+      done();
     }, 250);
   });
   it("rejects time of 0", () => {
     strictEqual(sleep(0), false);
-  })
+  });
   it("rejects negative time", () => {
     strictEqual(sleep(-5), false);
-  })
-})
+  });
+});

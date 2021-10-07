@@ -22,3 +22,6 @@ export declare function range({
   step,
   length
 }: RangeArgument): Array<number> | false;
+
+// sleep module
+export declare function sleep(time: number): Promise<void> | false;

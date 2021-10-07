@@ -20,6 +20,10 @@
       "import": "./dist/range/index.js",
       "require": "./dist/range/index.cjs"
     },
+    "./sleep": {
+      "import": "./dist/sleep/index.js",
+      "require": "./dist/sleep/index.cjs"
+    },
     "./package.json": "./package.json"
   },
   "scripts": {

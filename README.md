@@ -35,6 +35,8 @@ The `min` and `max` options are optional on both functions to serve as a complet
 The `forEach` module works much like `Array.prototype.forEach`, but also works for Strings and Objects. You may also optionally return `false` from the callback to perform a `break` in the internal `for ()` loop. To `continue` simply `return;`.
 
 ```js
+import { forEach } from "foxkit/forEach";
+
 const myObj = {
   foo: "foobar",
   lorem: "Lorem ipsum",
@@ -57,6 +59,8 @@ foxkit: Utility collection
 The `range` module returns an array with numbers based on the constraints provided in the options. You must provide either an `end` (inclusive) or `length` option. Negative `step` values are supported. Should you provide an invalid combination you may receive an empty array!
 
 ```js
+import { range } from "foxkit/range";
+
 range({ start: 1, end: 5 }); // => [1, 2, 3, 4, 5]
 range({ start: 4, step: 0.5, length: 3 }); // => [4, 4.5, 5]
 range({ start: 10, step: -2, end: 5 }); // => [10, 8, 6]

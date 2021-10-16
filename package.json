@@ -38,7 +38,7 @@
     "postbuild": "mocha",
     "prepare": "simple-git-hooks",
     "dev": "rollup -c -w",
-    "publish": "yarn build && clean-publish --fields scripts"
+    "publish": "yarn build && clean-publish --fields scripts --files src"
   },
   "eslintConfig": {
     "extends": "@foxkit"

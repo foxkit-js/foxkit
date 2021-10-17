@@ -16,6 +16,10 @@
       "import": "./dist/clamp/index.js",
       "require": "./dist/clamp/index.cjs"
     },
+    "./dedent": {
+      "import": "./dist/dedent/index.js",
+      "require": "./dist/dedent/index.cjs"
+    },
     "./forEach": {
       "import": "./dist/forEach/index.js",
       "require": "./dist/forEach/index.cjs"

@@ -1,6 +1,8 @@
 export function dedent(options) {
+  // options
   const tabWidth = options?.tabWidth ?? 2;
   const useTabs = options?.useTabs ?? false;
+  const trim = options?.trim ?? false;
 
   function countWidth(spaces) {
     return spaces.replace(/\t/g, " ".repeat(tabWidth)).length;
@@ -35,16 +37,24 @@ export function dedent(options) {
   }
 
   function formResult(subject, minWidth) {
-    subject
+    let result = subject
       .map(line =>
         line.width === null ? "" : makeSpaces(line.width - minWidth) + line.str
       )
       .join("\n");
+
+    if (trim) {
+      result = result.replace(/^\n+|\n+$/g, "");
+    }
+
+    return result;
   }
 
   return str => {
-    // prepare subject
-    const subject = str.split("\n").map(line => splitWhitespace(line));
+    const subject = str
+      .replace(/\r\n/g, "\n")
+      .split("\n")
+      .map(line => splitWhitespace(line));
     const nonEmptyLines = subject.filter(line => line.width !== null);
     const minWidth = Math.min(...nonEmptyLines.map(line => line.width));
 

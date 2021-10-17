@@ -6,7 +6,7 @@ import { makeRollupConfig } from "@foxkit/internal";
 const distPath = join(process.cwd(), "dist");
 if (existsSync(distPath)) {
   rmdirSync(join(process.cwd(), "dist"), { recursive: true, force: true });
-} 
+}
 
 const pkg = JSON.parse(
   readFileSync(join(process.cwd(), "package.json"), "utf8")

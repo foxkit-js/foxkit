@@ -30,6 +30,44 @@ isClamped({ value: 100, max: 10 }); // => false
 
 The `min` and `max` options are optional on both functions to serve as a complete replacement to `Math.min()` and `Math.max()`.
 
+### dedent
+
+`dedent` allows for simple string reformatting with as many indentations removed as possibly and the remainder formatted as per settings.
+
+**Options:**
+
+- tabWidth: The amount of spaces a tab symbol (`\t`) is representing (default: 2)
+- useTabs: Transforms as many spaces as possible to tab symbols as per set tabWidth (default: false)
+- trim: Remove empty lines at the start and end of the string (default: false)
+
+Passing an objects object is optional, but recommended as defaults may change in future versions.
+
+**Example:**
+
+```js
+import { dedent } from "foxkit/dedent";
+const dd = dedent({
+  tabWidth: 2,
+  useTabs: false
+});
+
+dd(`
+  foo: {
+    bar: "baz",
+  \tcat: "meows"
+  }
+`); /* =>
+`
+foo: {
+  bar: "baz",
+  cat: "meows"
+}
+`
+*/
+```
+
+**Note**: The dedent formatter transforms `\r\n` to `\n` and removes all whitespace in empty lines.
+
 ### forEach
 
 The `forEach` module works much like `Array.prototype.forEach`, but also works for Strings and Objects. You may also optionally return `false` from the callback to perform a `break` in the internal `for ()` loop. To `continue` simply `return;`.
@@ -82,4 +120,4 @@ See our [foxkit-js](https://github.com/foxkit-js) github org page or search for 
 
 ### See also
 
-- [`modern-diacritics`](https://github.com/Mitsunee/modern-diacritics): library for ascii-folding that also includes a `slugify` function
+- [`modern-diacritics`](https://github.com/Mitsunee/modern-diacritics): library for tranforming diacritics and latinizing text. Also includes a `slugify` function
